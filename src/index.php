@@ -1,7 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
+
+<?php
+session_start();
+if(!isset($_SESSION['session_user_id'])){
+	header('refresh:0;url=error_403.html');
+}
+
+?>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SB Admin 2 - Home </title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +57,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-                                  
+                                
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -63,6 +73,13 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
                 </a>
+
+
+
+
+
+
+                
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
@@ -731,7 +748,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="logout.html">Logout</a>
                 </div>
             </div>
         </div>
